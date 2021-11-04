@@ -15,9 +15,11 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(name, price, category){
+    const menu = {name: name, price: price, category: category};
+    return menu;
 }
+// console.log('Task 1a:', createMenuItem('taco', 8, 'Lunch'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -28,7 +30,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
+console.log(createMenuItem('Garlic', 2, 'Snack'));
+console.log(createMenuItem('Yogurt', 5, 'Breakfast'));
+console.log(createMenuItem('Steak', 21, 'Dinner'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -47,9 +51,16 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function(string){
+    if (string === 'teacher' || string === 'student'){
+      return this.price-(this.price * .25);
+    } else if (string === 'public'){
+      return this.price-(this.price * .10);
+    }
+    return this.price;
+  }
 }
-
+console.log(burger.discount('teacher'));
 
 
 ///////////////Reviews (MVP)///////////////////
